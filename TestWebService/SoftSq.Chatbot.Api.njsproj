@@ -3,7 +3,7 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>TestWebService</Name>
+    <Name>SoftSq.Chatbot.Api</Name>
     <RootNamespace>TestWebService</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -11,7 +11,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>029eca8b-0426-4758-8717-af8df6da84c1</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <StartupFile>app.js</StartupFile>
     <SearchPath>
     </SearchPath>
@@ -30,8 +31,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.js" />
+    <Compile Include="controllers\aicontroller.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="controllers\LineMessageController.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="data\database.js">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="models\mapping.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\index.js" />
+    <Compile Include="routes\linewebhook.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes\users.js" />
+    <Compile Include="server.js">
+      <SubType>Code</SubType>
+    </Compile>
     <Content Include="package.json" />
     <Content Include="public\stylesheets\main.css" />
     <Content Include="README.md" />
@@ -40,6 +59,9 @@
     <Content Include="views\error.pug" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="data\" />
+    <Folder Include="models\" />
+    <Folder Include="controllers\" />
     <Folder Include="public\" />
     <Folder Include="public\images\" />
     <Folder Include="public\javascripts\" />

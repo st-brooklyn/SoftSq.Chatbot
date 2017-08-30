@@ -38,7 +38,12 @@ namespace ChatbotAPI
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            //app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("getmessage", "getmessage", defaults: new { controller = "Message", action = "GetMessage" });
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }
